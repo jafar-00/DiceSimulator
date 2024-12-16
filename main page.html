@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dice_des.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Dice Simulator</h1>
+    <div id="dice" onclick="fun()">
+        <div id="1"><span></span></div>
+        <div id="2"><span></span></div>
+        <div id="3"><span></span></div>
+        <div id="4"><span></span></div>
+        <div id="5"><span></span></div>
+        <div id="6"><span></span></div>
+        <div id="7"><span></span></div>
+        <div id="8"><span></span></div>
+        <div id="9"><span></span></div>
+    </div>
+
+
+    <script>
+        function fun(){
+        var value=Math.floor(Math.random()*6) + 1;
+        
+        var ele=document.getElementById("dice").querySelectorAll("span");
+        var i;
+
+        for(i=0;i<ele.length;i++) ele[i].style.visibility="hidden";
+
+        if(value == 1){
+            ele[4].style.visibility="visible";
+        }else if(value == 2){
+
+            ele[2].style.visibility="visible";
+            ele[6].style.visibility="visible";
+
+        }else if(value == 3){
+
+            ele[2].style.visibility="visible";
+            ele[4].style.visibility="visible";
+            ele[6].style.visibility="visible";
+
+        }else if(value == 4){
+
+            ele[0].style.visibility="visible";
+            ele[2].style.visibility="visible";
+            ele[6].style.visibility="visible";
+            ele[8].style.visibility="visible";
+
+        }else if(value == 5){
+
+            ele[0].style.visibility="visible";
+            ele[2].style.visibility="visible";
+            ele[4].style.visibility="visible";
+            ele[6].style.visibility="visible";
+            ele[8].style.visibility="visible";
+
+        }else{
+            ele[0].style.visibility="visible";
+            ele[2].style.visibility="visible";
+            ele[3].style.visibility="visible";
+            ele[5].style.visibility="visible";
+            ele[6].style.visibility="visible";
+            ele[8].style.visibility="visible";
+        }
+    }
+    </script>
+</body>
+</html>
+
